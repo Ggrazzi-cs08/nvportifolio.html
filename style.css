@@ -41,15 +41,31 @@ header > .interface{
 }
 
 header a{
-    color: #722471;
+    color: #320000;
     text-decoration: none;
     display: inline-block;
     transition: 2s;
+    font-size: 22px;
 }
 
 header nav.menu-dekstop a:hover{
-    color: #c5a59f;
+    color: #8d4925;
     transform: scale(1.0);
+}
+
+nav a::after{
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: #8d4925;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 1.5 ease-in-out;
+}
+
+nav a:hover::after{
+    width: 100%;
 }
 
 header nav ul{
@@ -63,7 +79,7 @@ header nav.menu-dekstop ul li{
 
 
 header .btn-contato button{
-    color: #722471;
+    color: #5d2417;
     padding: 10px 40px;
     font-size: 18px;
     font-weight: 600px;
@@ -79,13 +95,13 @@ header .btn-contato button:hover{
 }
 
 .logo img{
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
 }
 
 /*ESTILO MENU MOBILE*/
 .btn-abrir-menu i{
-    color:#722471;
+    color:#320000;
     font-size: 30px;
 }
 .menu-mobile{
@@ -112,7 +128,7 @@ header .btn-contato button:hover{
 }
 
 .menu-mobile .btn-fechar i{
-    color: #582957;
+    color: #5d2417;
     font-size: 30px;
 }
 .menu-mobile nav ul{
@@ -124,12 +140,12 @@ header .btn-contato button:hover{
     font-weight: 300;
     padding: 20px 8%;
     display: block;
-    color: #722471;
+    color: #5d2417;
 }
 
 .menu-mobile nav ul li a:hover{
-    background-color: #66326596;
-    color: #000;
+    background-color: #c57d5662;
+    color: #5d2417;
 }
 
 .overlay-menu{
@@ -154,11 +170,30 @@ section.topo-site .flex{
 }
 
 .topo-site h1{
-    color: #582957;
+    color: #5d2417;
     font-size: 33px;
     line-height: 38px;
 }
 
+.topo-site p{
+    color:#8d4925;
+    font-size: 17px;
+    line-height: 20px;
+}
+/*EFEITO FLUTUAÇÃO*/
+.img-topo-site img{
+    width: 400px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-50px);
+    }
+}
 /*ESTILO SOBRE*/
 section.sobre{
     padding: 40px 4%;
@@ -170,10 +205,11 @@ section.sobre .flex{
 }
 
 .sobre .txt-sobre{
-    color:#582957 ;
+    color:#5d2417 ;
 }
 
 .sobre .txt-sobre h2{
+    text-align: left;
     font-size: 40px ;
     line-height: 40px;
     margin-bottom: 20px;
@@ -218,6 +254,8 @@ section.minhas{
 }
 section.minhas .flex{
     gap: 60px;
+    justify-content: center;
+    display: flex;
 }
 .minhas .minhas-box{
     color: #fff;
@@ -241,7 +279,77 @@ section.minhas .flex{
     margin: 15px 0;
 }
 
+.container body {
+    font-family: Arial, sans-serif;
+    background-color: #bb9469;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.skill-box {
+    width: 350px;
+    height: 300px;
+    padding: 20px;
+    background-color: #bb9469;
+    border-radius: 10px;
+    transform: scale(1.05s);
+    box-shadow: 0 0 8px #fff;
+}
+
+.bar {
+    width: 100%;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.html {
+    width: 85%; /* Ajuste a largura para a porcentagem desejada */
+    height: 100%;
+    background-color: #5d2417;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.css{
+    width: 70%; /* Ajuste a largura para a porcentagem desejada */
+    height: 100%;
+    background-color: #5d2417;
+}
+
+.js{
+    width: 10%; /* Ajuste a largura para a porcentagem desejada */
+    height: 100%;
+    background-color: #5d2417;
+}
+
+.cv{
+    width: 15%; /* Ajuste a largura para a porcentagem desejada */
+    height: 100%;
+    background-color: #5d2417;
+}
+
+.python{
+    width: 50%; /* Ajuste a largura para a porcentagem desejada */
+    height: 100%;
+    background-color: #5d2417;
+}
 /*RESPONSIVIDADE*/
 @media screen and (max-width: 1020px) {
     /*CLASSES GERAIS*/
@@ -304,15 +412,46 @@ section.minhas .flex{
 
 /*responsividade*/
 
-footer{
-    padding: 40px 4%;
-    box-shadow: 0 0 40px 10px;
+.rodape {
+    background-color: #8d492559;
+    color: #fff;
+    padding: 20px 0;
 }
 
-footer .flex{
+.container {
+    display: flex;
     justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-footer .line-footer p i{
-    color:#582957;
+.logo img {
+    width: 150px; /* ajuste conforme necessário */
 }
+
+.contato p {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.contato ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contato ul li {
+    margin-bottom: 5px;
+}
+
+/* Estilos adicionais para estilizar links de contato */
+.contato ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contato ul li a:hover {
+    text-decoration: underline;
+}
+
